@@ -51,4 +51,4 @@ The `type` can be any of `CollByte`, `Int`, `Long`, `GroupElement` and `Address`
 
 ## Examples
 
-The folder `src/test/resources` contains sample ErgoScript and symbol files.
+The folder [src/test/resources](src/test/resources) contains sample ErgoScript and symbol files.
