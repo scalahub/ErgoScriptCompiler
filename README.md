@@ -5,7 +5,7 @@ A CLI tool to compile ErgoScript code to ErgoTree and Address
 ## How To Use
 
 1. If using the precompiled jar, skip to Step 2. 
-   1. Clone the repository using `git clone .
+   1. Clone the repository using `git clone https://github.com/scalahub/ErgoScriptCompiler.git`.
    2. Ensure SBT is installed and set in path.
    3. Compile the jar using `sbt assembly`. There should be a new jar in the folder `target/scala-2.12/`. 
 
