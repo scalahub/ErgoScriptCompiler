@@ -1,10 +1,12 @@
 import kiosk.encoding.ScalaErgoConverters._
 import kiosk.ergo
+import kiosk.ergo._
 import kiosk.offchain.compiler.model.DataType
 import kiosk.offchain.parser.Parser.checkedReads
 import kiosk.script.{KioskScriptCreator, KioskScriptEnv}
 import org.sh.utils.Util.using
 import play.api.libs.json.{JsResult, JsString, JsSuccess, JsValue, Json, Reads, Writes}
+import scorex.crypto.hash.Blake2b256
 import sigmastate.Values
 
 import scala.io.Source
@@ -22,12 +24,12 @@ object Parser {
   implicit val readsSymbol = checkedReads(Json.reads[Symbol])
   implicit val readsSymbols = checkedReads(Json.reads[Symbols])
 }
+
 object Compiler {
   import Parser._
-  def main(args: Array[String]): Unit = {
-    val srcFile: String = Try(args(0)).getOrElse(throw new Exception("Usage java -cp <jar> Compiler <ergoScript_file> <optional_symbols_file>"))
-    val src: String = using(Source.fromFile(srcFile))(_.mkString)
-    val symbols: Symbols = Try(args(1)).toOption
+  def compile(ergoScriptFile: String, symbolsFile: Option[String]) = {
+    val src: String = using(Source.fromFile(ergoScriptFile))(_.mkString)
+    val symbols: Symbols = symbolsFile
       .map { fileName =>
         val symbolsSrc = using(Source.fromFile(fileName))(_.mkString)
         Json.parse(symbolsSrc).as[Symbols]
@@ -37,10 +39,26 @@ object Compiler {
     symbols.symbols.foreach(symbol => env.$addIfNotExist(symbol.name, symbol.getValue))
     val scriptCreator = new KioskScriptCreator(env)
     val ergoTree: Values.ErgoTree = scriptCreator.$compile(src)
-    println("ErgoTree:")
-    println(ergoTreeToString(ergoTree))
-    println("Address:")
-    println(getStringFromAddress(getAddressFromErgoTree(ergoTree)))
+    val ergoTreeEncoded = ergoTreeToString(ergoTree)
+    val hashEncoded = Blake2b256(ergoTree.bytes).encodeHex
+    val address = getStringFromAddress(getAddressFromErgoTree(ergoTree))
+    (ergoTreeEncoded, hashEncoded, address)
+  }
+}
+object Compile {
+  def main(args: Array[String]): Unit = {
+    if (args.isEmpty) println("Usage java -cp <jar> Compiler <ergoScript_file> <optional_symbols_file>")
+    else {
+      val (ergoTree, hash, address) = Compiler.compile(args(0), Try(args(1)).toOption)
+      println("ErgoTree:")
+      println(ergoTree)
+      println
+      println("Blake2b256:")
+      println(hash)
+      println
+      println("Address:")
+      println(address)
+    }
   }
 
 }
