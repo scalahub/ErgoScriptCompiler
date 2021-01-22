@@ -26,26 +26,6 @@
       "value":"749fe0b8c63213be3451af2578eacabd620a9e687f5c55c54f1ec571b17c9c85"
     },
     {
-      "name":"$oracleReward",
-      "type":"Long",
-      "value":"20000000"
-    },
-    {
-      "name":"$maxDeviation",
-      "type":"Int",
-      "value":"5"
-    },
-    {
-      "name":"$minOracleBoxes",
-      "type":"Int",
-      "value":"3"
-    },
-    {
-      "name":"$epochPeriod",
-      "type":"Int",
-      "value":"30"
-    },
-    {
       "name":"epochPeriod",
       "type":"Int",
       "value":"30"
