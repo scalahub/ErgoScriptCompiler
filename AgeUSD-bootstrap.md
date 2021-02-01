@@ -32,10 +32,14 @@ To issue the tokens, perform the following steps:
   a transaction can issue at most one token. Hence, the issuance request must be made separately for each token.
    ```json
    {
-     "amount": 123456,
-     "name": "Short symbol",
-     "description": "Some token description",
-     "decimals": 0
+     "requests": [
+       {
+         "amount": 123456,
+         "name": "Short symbol",
+         "description": "Some token description",
+         "decimals": 0
+       }
+     ]
    }
    ```
   Replace `123456` with the actual quantity of the token to be issued and optionally give a meaningful name and description.
