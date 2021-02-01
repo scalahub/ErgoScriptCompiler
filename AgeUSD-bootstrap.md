@@ -93,7 +93,7 @@ The first payment request corresponds to the bank box and second to the update b
 
 Generate the payment request as follows:
 
-`java -cp <jarFile> Payment AgeUSD_update.es AgeUSD_update_symbols.json`
+`java -cp <jarFile> Payment payment_request_AgeUSD.json payment_request_AgeUSD_symbols.json`
 
 This will output something like:
 ```json
