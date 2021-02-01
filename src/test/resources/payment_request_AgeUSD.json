@@ -4,21 +4,34 @@
     "value": 1000000,
     "assets": [
       {
-        "tokenId": "7bd873b8a886daa7a8bfacdad11d36aeee36c248aaf5779bcd8d41a13e4c1604",
-        "amount": 1
-      },
-      {
         "tokenId": "a908bf2be7e199014b45e421dc4adb846d8de95e37da87c7f97ac6fb8e863fa2",
         "amount": 10000000000000
       },
       {
         "tokenId": "b240daba6b5f9f9b6d4e6d7fc8b7c0423f1dfa28a883ec626a18b69be6c7590e",
         "amount": 10000000000000
+      },
+      {
+        "tokenId": "7bd873b8a886daa7a8bfacdad11d36aeee36c248aaf5779bcd8d41a13e4c1604",
+        "amount": 1
       }
     ],
     "registers": [
       "zero",
       "zero"
+    ]
+  },
+  {
+    "address": "6Vs43fLottAzin3EiEiswbSD31ETscqBLy9i3zTWCwUVuG79fWuP7S3Kko5PEK56UEBWSTE8GuuXq3gMfYSUNJ1ujSTy5yKzrAHRGLk5rw1UTecdQZfPJTdpxMvkEvG9TYm4ie8E3z1MMfTJ3wzPxgQ2fhHzxaCLZAdNPF3Ji56VktsB4kQZsadxQDbYjwXWAxypA1YkRzLujhmPZELJR6EiRz2pdR15iKPNJh6pDo3CFqb9eySCbHk1EgwPo8C6nvHpqyb2c6bKkW2p4vQL2BudZhq6CZPToCGd376EZy3mgawmeWePrvFCrCDsrnEccfkr3PhcvtRqHzJD7m2oTFfmyiWvD7NakGh3woNU8XEV4uKULieaHWbs21M3mDe4CZ7Vg477GeWkqc8jaP4LGjfuEM5cqpNyct8CYrYoJCDB18RhWqtCL2ddEBwFCXRiFujrKQjSbncSJ2xd4BkmBcHrjBzskMAat1N6A72ZN8KNYsWBQBRLX4VoJwVTvtaSFAuCSBaDtoq1uwVG",
+    "value": 1000000,
+    "assets": [
+      {
+        "tokenId": "77d14a018507949d1a88a631f76663e8e5101f57305dd5ebd319a41028d80456",
+        "amount": 1
+      }
+    ],
+    "registers": [
+      "dummyBoxId"
     ]
   }
 ]
