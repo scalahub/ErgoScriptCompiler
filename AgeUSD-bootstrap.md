@@ -84,7 +84,6 @@ Note the address returned by the command. Call this the `bankAddress`.
 Note the address returned by the command. Call this the `updateAddress`.
 
 ## 4. Create Payment Request
-https://github.com/scalahub/ErgoScriptCompiler/blob/main/AgeUSD-bootstrap.md#3-compile-ergoscript-code
 
 Edit the file [payment_request_AgeUSD.json](src/test/resources/payment_request_AgeUSD.json) as follows.
 The first payment request corresponds to the bank box and second to the update box. 
