@@ -73,3 +73,33 @@ The `type` can be any of `CollByte`, `Int`, `Long`, `GroupElement` and `Address`
 - `Int` and `Long` are given as numbers encoded as strings
 - `GroupElement` is given as a 33-byte compressed elliptic curve point, with point at infinity represented as all zeros.
 
+## Generating Payment Request
+
+In Ergo, the payment requests require hex encoded register values. Use the following command to generate a payment request:
+
+```bash
+java -cp ErgoScriptCompiler.jar Payment myRequest.json mySymbols.json
+
+[ {
+  "address" : "29irJ65SHH5VxgQaXubC1z9eHzutUWV6BB2QGCbA9....",
+  "value" : 1000000,
+  "assets" : [ {
+    "tokenId" : "7bd873b8a886daa7a8bfacdad11d36aeee36c248aaf5779bcd8d41a13e4c1604",
+    "amount" : 1
+  }, {
+    "tokenId" : "a908bf2be7e199014b45e421dc4adb846d8de95e37da87c7f97ac6fb8e863fa2",
+    "amount" : 10000000000000
+  }, {
+    "tokenId" : "b240daba6b5f9f9b6d4e6d7fc8b7c0423f1dfa28a883ec626a18b69be6c7590e",
+    "amount" : 10000000000000
+  } ],
+  "registers" : [ "0500", "0500" ]
+} ]
+ 
+```
+
+The command needs two parameters. The first is a file containing the payment request as defined in the node specification with the 
+difference that the actual register values are replaced with names of variables defined in a separate symbol file, which is the second parameter.
+The output is the payment request with the names replaced with the actual hex-serialized values.
+
+The resource folder contains a [sample payment request](src/test/resources/payment_request_AgeUSD.json) and a [sample symbols file](src/test/resources/payment_request_AgeUSD_symbols.json).

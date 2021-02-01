@@ -1,0 +1,9 @@
+{
+  "symbols":[
+    {
+      "name":"zero",
+      "type":"Long",
+      "value":"0"
+    }
+  ]
+}

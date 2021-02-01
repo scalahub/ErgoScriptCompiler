@@ -12,5 +12,7 @@ object Parser {
   implicit val readsSymbols = checkedReads(Json.reads[Symbols])
 
   implicit val readsToken = checkedReads(Json.reads[Token])
+  implicit val writesToken = Json.writes[Token]
   implicit val readsPaymentRequest = checkedReads(Json.reads[PaymentRequest])
+  implicit val writesPaymentRequest = Json.writes[PaymentRequest]
 }

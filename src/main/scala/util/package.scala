@@ -17,12 +17,13 @@ package object util {
 
   val NoSymbols = Symbols(Nil)
 
-  def loadSymbolsFromFile(symbolsFile: String) =
-    loadSymbolsFromJSON(using(Source.fromFile(symbolsFile))(_.mkString))
-
-  def loadSymbolsFromJSON(source: String) = Json.parse(source).as[Symbols]
+  def loadSymbols(symbolsFile: String): Symbols =
+    Json.parse(using(Source.fromFile(symbolsFile))(_.mkString)).as[Symbols]
 
   case class Token(tokenId: String, amount: Long)
 
   case class PaymentRequest(address: String, value: Long, assets: Seq[Token], registers: Seq[String])
+
+  def loadPaymentRequest(paymentRequestFile: String): Seq[PaymentRequest] =
+    Json.parse(using(Source.fromFile(paymentRequestFile))(_.mkString)).as[Seq[PaymentRequest]]
 }

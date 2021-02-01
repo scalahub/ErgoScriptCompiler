@@ -21,7 +21,7 @@ object Compiler {
   def compile(ergoScriptFile: String, symbolsFile: Option[String]): (String, String, String) = {
     val src: String = using(Source.fromFile(ergoScriptFile))(_.mkString)
 
-    val symbols = symbolsFile.map(loadSymbolsFromFile).getOrElse(NoSymbols)
+    val symbols = symbolsFile.map(loadSymbols).getOrElse(NoSymbols)
     val env = new KioskScriptEnv()
     symbols.symbols.foreach(symbol => env.$addIfNotExist(symbol.name, symbol.getValue))
 

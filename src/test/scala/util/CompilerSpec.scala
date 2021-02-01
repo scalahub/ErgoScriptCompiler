@@ -1,9 +1,8 @@
 package util
 
 import org.scalatest.{Matchers, WordSpec}
-import org.scalatestplus.mockito._
 
-class CompilerSpec extends WordSpec with MockitoSugar with Matchers {
+class CompilerSpec extends WordSpec with Matchers {
 
   "Compiler" should {
 
