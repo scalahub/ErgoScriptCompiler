@@ -1,4 +1,4 @@
-# ErgoScript Compiler
+# Ergo CLI
 
 A CLI tool to compile ErgoScript code to ErgoTree and Address
 
