@@ -15,7 +15,7 @@ The bootstrap process consists of the following steps:
 
 ## 1. Issue Tokens
 
-### For Bank Contract
+#### For Bank Contract
 We need to issue a total of three tokens
 1. A token issued in quantity 1 with id `bankNFT`. This identifies the bank box. 
 2. A token issued in quantity `maxScTokens` with id `scToken`. This identifies the stable-coins. 
@@ -43,7 +43,7 @@ Once the tokens are issued and the transaction confirms, note down the token ids
 
 ## 2. Update Symbols File
 
-#### Bank Contract
+#### For Bank Contract
 
 At the bare minimum, you need to define the following parameters:
 1. `coolingOffHeight`, the height after which the hardwired max-reserve ratio is activated. 
@@ -54,7 +54,7 @@ At the bare minimum, you need to define the following parameters:
 
 These need to be updated in the file [AgeUSD_symbols.json](src/test/resources/AgeUSD_symbols.json)
 
-#### Update Contract
+#### For Update Contract
 
 At the bare minimum, you need to define the following parameters:
 1. `minVotes`, the minimum number of votes needed to update the bank contract.
@@ -71,13 +71,13 @@ These need to be updated in the file [AgeUSD_update_symbols.json](src/test/resou
 Following the instructions of the compiler, issue the following commands to compile the contracts
 Note that in the following `<jarFile>` is the file generated from `sbt assembly` command. This is usually the file `target/scala-2.12/ErgoScriptCompiler-assembly-0.1.jar`.
 
-#### Bank Contract
+#### For Bank Contract
 
 `java -cp <jarFile> Payment AgeUSD.es AgeUSD_symbols.json`
 
 Note the address returned by the command. Call this the `bankAddress`.
 
-#### Update Contract
+#### For Update Contract
 
 `java -cp <jarFile> Payment AgeUSD_update.es AgeUSD_update_symbols.json`
 
@@ -90,7 +90,7 @@ Edit the file [payment_request_AgeUSD.json](src/test/resources/payment_request_A
 The first payment request corresponds to the bank box and second to the update box. 
 - Replace the addresses with the actual addresses obtained in the previous step [Compile ErgoScript Code](#3-compile-ergoscript-code).
 - Replace the token amounts with the correct token amounts 
-- Replace the token ids with the correct token ids obtained in the step [Issue tokens](#1-issue-tokens), ensuring the following ordering for the bank box: (1) `scToken` (2) `rcToken`  (3) `bankNFT`.
+- Replace the token ids with the correct token ids obtained in the step [Issue Tokens](#1-issue-tokens), ensuring the following ordering for the bank box: (1) `scToken` (2) `rcToken`  (3) `bankNFT`.
 
 Generate the payment request as follows:
 
