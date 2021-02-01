@@ -9,7 +9,7 @@ The folder [src/test/resources](src/test/resources) contains sample ErgoScript a
 Following is a transcript of an execution.
 
 ```bash
-java -cp ErgoScriptCompiler.jar Compile pool_deposit.es pool_deposit_symbols.json
+java -cp ErgoScriptCompiler.jar Compile mySymbols.es mySymbols.json
  
 ErgoTree:
 100804000e20d998e06e0c093b0990fa3da4f3bea4364546803551ea9cac02623e9675ba45220400...
