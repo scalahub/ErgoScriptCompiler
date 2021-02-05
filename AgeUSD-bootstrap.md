@@ -39,7 +39,8 @@ To issue the tokens, perform the following steps:
          "description": "Some token description",
          "decimals": 0
        }
-     ]
+     ],
+     "fee": 1500000
    }
    ```
   Replace `123456` with the actual quantity of the token to be issued and optionally give a meaningful name and description.

@@ -1,6 +1,6 @@
 import kiosk.ergo
+import kiosk.ergo.usingSource
 import kiosk.offchain.compiler.model.DataType
-import org.sh.utils.Util.using
 import play.api.libs.json.Json
 
 import scala.io.Source
@@ -18,12 +18,12 @@ package object util {
   val NoSymbols = Symbols(Nil)
 
   def loadSymbols(symbolsFile: String): Symbols =
-    Json.parse(using(Source.fromFile(symbolsFile))(_.mkString)).as[Symbols]
+    Json.parse(usingSource(Source.fromFile(symbolsFile))(_.mkString)).as[Symbols]
 
   case class Token(tokenId: String, amount: Long)
 
   case class PaymentRequest(address: String, value: Long, assets: Seq[Token], registers: Seq[String])
 
   def loadPaymentRequest(paymentRequestFile: String): Seq[PaymentRequest] =
-    Json.parse(using(Source.fromFile(paymentRequestFile))(_.mkString)).as[Seq[PaymentRequest]]
+    Json.parse(usingSource(Source.fromFile(paymentRequestFile))(_.mkString)).as[Seq[PaymentRequest]]
 }
