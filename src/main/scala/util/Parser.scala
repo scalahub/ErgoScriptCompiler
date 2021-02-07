@@ -1,7 +1,7 @@
 package util
 
-import kiosk.offchain.compiler.model.DataType
-import kiosk.offchain.parser.Parser.checkedReads
+import jde.compiler.model.DataType
+import jde.parser.Parser.checkedReads
 import play.api.libs.json.{JsResult, JsSuccess, JsValue, Json, Reads}
 
 object Parser {

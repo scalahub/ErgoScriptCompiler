@@ -1,6 +1,6 @@
 import kiosk.ergo
 import kiosk.ergo.usingSource
-import kiosk.offchain.compiler.model.DataType
+import jde.compiler.model.DataType
 import play.api.libs.json.Json
 
 import scala.io.Source

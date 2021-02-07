@@ -6,7 +6,7 @@ updateOptions := updateOptions.value.withLatestSnapshots(false)
 
 scalaVersion := "2.12.10"
 
-lazy val Kiosk = RootProject(uri("git://github.com/scalahub/Kiosk.git"))
+lazy val JDE = RootProject(uri("git://github.com/scalahub/jde.git"))
 
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.9.1",
@@ -18,7 +18,7 @@ libraryDependencies ++= Seq(
 
 lazy val root = (project in file("."))
   .dependsOn(
-    Kiosk
+    JDE
   )
   .settings(
     updateOptions := updateOptions.value.withLatestSnapshots(false),
@@ -29,4 +29,3 @@ lazy val root = (project in file("."))
       case x                             => MergeStrategy.first
     }
   )
-  
