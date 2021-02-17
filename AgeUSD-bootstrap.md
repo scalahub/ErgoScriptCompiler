@@ -73,7 +73,7 @@ These need to be updated in the file [AgeUSD_update_symbols.json](src/test/resou
 
 # 3. Compile ErgoScript Code
 
-For this step, ensure that you have Java 8 or higher installed. 
+For this step, ensure that you have Java 9 or higher installed. 
 
 Following the instructions of the compiler, issue the following commands to compile the contracts.
 
