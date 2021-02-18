@@ -13,7 +13,7 @@
     {
       "name":"coolingOffHeight",
       "type":"Int",
-      "value":"430000"
+      "value":"412345"
     },
     {
       "name":"rcDefaultPrice",
@@ -43,7 +43,12 @@
     {
       "name":"oraclePoolNFT",
       "type":"CollByte",
-      "value":"54acaa0c6d5d3bc66b88364a423b5f156ed763f7236d437adb44d70787bc0f95"
+      "value":"0fb1eca4646950743bc5a8c341c16871a0ad9b4077e3b276bf93855d51a042d1"
+    },
+    {
+      "name":"updateNFT",
+      "type":"CollByte",
+      "value":"77d14a018507949d1a88a631f76663e8e5101f57305dd5ebd319a41028d80456"
     }
   ]
 }
