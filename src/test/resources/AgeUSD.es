@@ -1,7 +1,4 @@
-{ // AgeUSD v1 
-  // difference from v0: this version does not have update protocol
-
-  // this box
+{ // this box
   // R4: Number of stable-coins in circulation
   // R5: Number of reserve-coins in circulation
 
@@ -114,5 +111,5 @@
     validDataInput
   } else false
 
-  sigmaProp(isExchange)
+  sigmaProp(isExchange || INPUTS(0).tokens(0)._1 == updateNFT && CONTEXT.dataInputs.size == 0)
 }
