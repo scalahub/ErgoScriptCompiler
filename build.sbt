@@ -6,7 +6,7 @@ updateOptions := updateOptions.value.withLatestSnapshots(false)
 
 scalaVersion := "2.12.10"
 
-lazy val Kiosk = RootProject(uri("git://github.com/scalahub/Kiosk.git"))
+lazy val Kiosk = ProjectRef(uri("git://github.com/ergoplatform/ergo-jde.git"), "kiosk")
 
 libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-json" % "2.9.1",
