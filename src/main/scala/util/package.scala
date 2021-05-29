@@ -21,7 +21,7 @@ package object util {
 
   case class Token(tokenId: String, amount: Long)
 
-  case class PaymentRequest(address: String, value: Long, assets: Seq[Token], registers: Seq[String])
+  case class PaymentRequest(address: String, value: Long, assets: Seq[Token], registers: Map[String, String])
 
   def loadPaymentRequest(paymentRequestFile: String): Seq[PaymentRequest] =
     Json.parse(usingSource(Source.fromFile(paymentRequestFile))(_.mkString)).as[Seq[PaymentRequest]]

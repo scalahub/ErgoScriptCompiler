@@ -23,10 +23,10 @@ class PaymentSpec extends WordSpec with Matchers {
       |            "amount":1
       |         }
       |      ],
-      |      "registers":[
-      |         "0500",
-      |         "0500"
-      |      ]
+      |      "registers":{
+      |         "R4": "0500",
+      |         "R5": "0500"
+      |      }
       |   },
       |   {
       |     "address": "6Vs43fLottAzin3EiEiswbSD31ETscqBLy9i3zTWCwUVuG79fWuP7S3Kko5PEK56UEBWSTE8GuuXq3gMfYSUNJ1ujSTy5yKzrAHRGLk5rw1UTecdQZfPJTdpxMvkEvG9TYm4ie8E3z1MMfTJ3wzPxgQ2fhHzxaCLZAdNPF3Ji56VktsB4kQZsadxQDbYjwXWAxypA1YkRzLujhmPZELJR6EiRz2pdR15iKPNJh6pDo3CFqb9eySCbHk1EgwPo8C6nvHpqyb2c6bKkW2p4vQL2BudZhq6CZPToCGd376EZy3mgawmeWePrvFCrCDsrnEccfkr3PhcvtRqHzJD7m2oTFfmyiWvD7NakGh3woNU8XEV4uKULieaHWbs21M3mDe4CZ7Vg477GeWkqc8jaP4LGjfuEM5cqpNyct8CYrYoJCDB18RhWqtCL2ddEBwFCXRiFujrKQjSbncSJ2xd4BkmBcHrjBzskMAat1N6A72ZN8KNYsWBQBRLX4VoJwVTvtaSFAuCSBaDtoq1uwVG",
@@ -37,9 +37,9 @@ class PaymentSpec extends WordSpec with Matchers {
       |          "amount": 1
       |       }
       |     ],
-      |     "registers": [
-      |       "0e0601a2b3c4d5e6"
-      |     ]
+      |     "registers": {
+      |       "R4": "0e0601a2b3c4d5e6"
+      |     }
       |   }
       |]""".stripMargin
 

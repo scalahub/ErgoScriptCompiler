@@ -37,7 +37,7 @@ class ParserSpec extends WordSpec with Matchers {
             Token(tokenId = "b240daba6b5f9f9b6d4e6d7fc8b7c0423f1dfa28a883ec626a18b69be6c7590e", amount = 10000000000000L),
             Token(tokenId = "7bd873b8a886daa7a8bfacdad11d36aeee36c248aaf5779bcd8d41a13e4c1604", amount = 1L)
           ),
-          registers = Seq("zero", "zero")
+          registers = Map("R4" -> "zero", "R5" -> "zero")
         ),
         PaymentRequest(
           address =
@@ -46,7 +46,7 @@ class ParserSpec extends WordSpec with Matchers {
           assets = Seq(
             Token(tokenId = "77d14a018507949d1a88a631f76663e8e5101f57305dd5ebd319a41028d80456", amount = 1L)
           ),
-          registers = Seq("dummyBoxId")
+          registers = Map("R4" -> "dummyBoxId")
         )
       )
     }
